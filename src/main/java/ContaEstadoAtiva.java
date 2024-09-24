@@ -1,19 +1,29 @@
-public class ContaAtiva extends ContaEstado {
+public class ContaEstadoAtiva extends ContaEstado {
 
-    private ContaAtiva() {
+    private ContaEstadoAtiva() {
 
     }
-    private static ContaAtiva instance = new ContaAtiva();
+    private static ContaEstadoAtiva instance = new ContaEstadoAtiva();
 
-    public static ContaAtiva getInstance() {
+    public static ContaEstadoAtiva getInstance() {
         return instance;
     }
+
     public String getEstado() {
         return "Conta Ativa";
     }
+
     public boolean bloqueada(Conta conta){
-        conta.setEstado(Conta)
+        conta.setEstado(ContaEstadoBloqueada.getInstance());
+        return true;
     }
+
+    //Como a conta ativa não pode ser encerrada sem antes ser bloqueada, eu não vou mudar o estado dela.
+    public boolean encerrada(Conta conta){
+        return false;
+    }
+
+
 
 
 }

@@ -1,21 +1,21 @@
-public class ContaEstadoTrancada extends ContaEstado{
+public class ContaEstadoEncerrada extends ContaEstado{
 
-    private ContaEstadoTrancada(){}
-    private static ContaEstadoTrancada instace = new ContaEstadoTrancada();
-    private static ContaEstadoTrancada getInstance(){
-        return instace;
+    private ContaEstadoEncerrada(){}
+    private static ContaEstadoEncerrada instance = new ContaEstadoEncerrada();
+    public static ContaEstadoEncerrada getInstance(){
+        return instance;
     }
 
     public String getEstado(){
-        return "Trancado";
+        return "Encerrada";
     }
 
     public boolean ativa (Conta conta){
-        conta.setEstado(ContaEstadoAtiva.getInstance());
         return false;
     }
 
-    public boolean
-
+    public boolean bloqueada (Conta conta){
+        return false;
+    }
 
 }
